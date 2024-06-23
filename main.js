@@ -26,7 +26,7 @@ function BuildMap() {
     setStyle()
 
     document.body.onmousemove = function(){rmbButtons()}
-
+    addTexts()
     setInterval(addTexts, 60000)
 
     const marker = new markers.AdvancedMarkerElement({
