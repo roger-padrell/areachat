@@ -5,8 +5,28 @@
     </head>
     <body style="margin: 0px;">
         <div id="googleMap" style="width:100%;height:100%;"></div>
-        <input id="in" placeholder="Write your message...">
-        <button id="send" onclick="sendText(document.getElementById('in').value)">Send</button>
+        <input id="in" placeholder="Write your message..." style="
+            position: absolute;
+            bottom: 3px;
+            width: 93%;
+            left: 1%;
+            height: 40px;
+            border-radius: 25px;
+            border: none;
+            padding-left: 10px;
+        ">
+        <button id="send" onclick="sendText(document.getElementById('in').value)" style="
+            all: unset;
+            position: absolute;
+            bottom: 3px;
+            right: 1%;
+            background: white;
+            width: 4%;
+            text-align: center;
+            height: 40px;
+            border-radius: 25px;
+            font-family: sans-serif;
+        ">Send</button>
     </body>
     <script src="./main.js"></script>
     <script
