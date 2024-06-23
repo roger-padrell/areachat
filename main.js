@@ -20,19 +20,23 @@ function BuildMap() {
       mapId: "5d374d95dce2c316",
       mapTypeId: google.maps.MapTypeId.SATELLITE,
     };
-    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    window.map = map;
+    try{
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        window.map = map;
+    }
+    finally{
 
-    setStyle()
-
-    document.body.onmousemove = function(){rmbButtons()}
-    addTexts()
-    setInterval(addTexts, 60000)
-
-    const marker = new markers.AdvancedMarkerElement({
-        map,
-        position: map.center,
-      });
+        setStyle()
+    
+        document.body.onmousemove = function(){rmbButtons()}
+        addTexts()
+        setInterval(addTexts, 60000)
+    
+        const marker = new markers.AdvancedMarkerElement({
+            map,
+            position: map.center,
+          });
+    }
 
 }
 function centerMap(lt, lg){
@@ -221,7 +225,7 @@ function sendText(text){
             'time':new Date().getTime(),
             'position':position
         })
-        db.update();
+        db.update(blank);
         canSendText = false;
         setTimeout(function(){canSendText=true},60000)
         document.getElementById("in").value = "";
