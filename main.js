@@ -214,7 +214,7 @@ function addTexts(){
     })
 }
 let canSendText = true;
-sendText(text){
+function sendText(text){
     if(canSendText){
         db.data.messages.push({
             'content':text,
