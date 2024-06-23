@@ -27,7 +27,7 @@ function BuildMap() {
 
     document.body.onmousemove = function(){rmbButtons()}
 
-    addTexts();
+    setInterval(addTexts, 60000)
 
     const marker = new markers.AdvancedMarkerElement({
         map,
@@ -224,5 +224,10 @@ function sendText(text){
         db.update();
         canSendText = false;
         setTimeout(function(){canSendText=true},60000)
+        document.getElementById("in").value = "";
+        addTexts()
+    }
+    else{
+        alert("You have to wait a minute before sending another text")
     }
 }
